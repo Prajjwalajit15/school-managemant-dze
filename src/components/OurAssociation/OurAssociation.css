@@ -1,0 +1,89 @@
+.association {
+  padding: 7rem 8%;
+  text-align: center;
+  background: #fff;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.association h2 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: #ff6f00;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.association p {
+  color: #444;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+.association-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.association-logos img {
+  height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+  max-width: 100%;
+}
+
+.association-logos img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+  .association {
+    padding: 5rem 6%;
+  }
+
+  .association-logos {
+    gap: 1.5rem;
+  }
+
+  .association-logos img {
+    height: 70px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media (max-width: 480px) {
+  .association {
+    padding: 4rem 4%;
+  }
+
+  .association-logos img {
+    height: 60px;
+  }
+
+  .association h2 {
+    font-size: 1.6rem;
+  }
+
+  .association p {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,126 @@
+.cta {
+  background: linear-gradient(to right, #ff6f00, #ffa726);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.cta h2 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cta p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.cta form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: slideUp 0.7s ease-in-out;
+}
+
+.cta input {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 30px;
+  width: clamp(220px, 30vw, 300px);
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.cta input::placeholder {
+  color: #fcefe5;
+}
+
+.cta input:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.cta button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background: white;
+  color: #ff6f00;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta button:hover {
+  background: #fff9c4;
+  color: #e65100;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .cta form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta input,
+  .cta button {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .cta button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+}
+
