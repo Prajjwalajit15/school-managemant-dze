@@ -12,6 +12,7 @@ import About from './components/pages/About';
 import OurAssociation from './components/OurAssociation/OurAssociation';
 import Admissions from './components/links/Admissions';
 import Contact from './components/links/Contact';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
  
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+      <ScrollToTopButton/>
     </>
   );
 };

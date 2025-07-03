@@ -8,6 +8,7 @@
   animation: fadeIn 1s ease-in-out;
 }
 
+  
 .cta h2 {
   font-size: clamp(1.8rem, 5vw, 2.5rem);
   margin-bottom: 1rem;
@@ -121,6 +122,14 @@
 
   .cta p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 385px) {
+  .cta input {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto; /* Center it horizontally */
   }
 }
 

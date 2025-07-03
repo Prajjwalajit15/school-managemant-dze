@@ -1,7 +1,8 @@
+/* ---------- Header Base ---------- */
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 3rem;
   background: rgba(255, 111, 0, 0.9); /* Semi-transparent orange */
   backdrop-filter: blur(8px);
@@ -9,45 +10,54 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
+}
+
+/* ---------- Logo Styling ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #fff;
 }
 
-.logo {
+.logo-icon {
   font-size: 1.8rem;
+}
+
+.logo-text {
+  padding-top: 6px;
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
-  letter-spacing: 1px;
+  white-space: nowrap;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-nav ul {
+/* ---------- Navigation Styles ---------- */
+.nav {
   display: flex;
-  gap: 2.5rem;
+}
+
+.nav ul {
+  display: flex;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-nav li {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-nav li a {
+.nav li a {
   text-decoration: none;
   color: #fff;
-  padding: 0.5rem 0;
-  transition: color 0.3s ease;
-  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
   position: relative;
+  transition: color 0.3s ease;
 }
 
-nav li a::after {
+.nav li a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -55,66 +65,99 @@ nav li a::after {
   width: 0%;
   height: 2px;
   background-color: #fff;
-  transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease;
 }
 
-nav li a:hover {
+.nav li a:hover {
   color: #fff9c4;
 }
 
-nav li a:hover::after {
+.nav li a:hover::after {
   width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 2rem;
-  }
+/* ---------- Menu Icon (Mobile) ---------- */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1100;
+}
 
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: 1rem;
+/* ---------- Animation ---------- */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
-  nav li {
-    width: 100%;
-  }
-
-  nav li a {
-    display: block;
-    width: 100%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-
-/* ---------- Responsive Section ---------- */
+/* ---------- Responsive (Tablet & Mobile) ---------- */
 @media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
   }
 
-  nav {
-    width: 100%;
+  .nav {
     display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 111, 0, 0.95);
+    padding: 1.5rem 2rem;
+    z-index: 1000;
+    animation: fadeInDown 0.3s ease;
   }
 
-  nav.open {
+  .nav.open {
     display: block;
   }
 
-  nav ul {
+  .nav ul {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.2rem;
-    padding-top: 1rem;
+    gap: 1rem;
   }
 
-  nav li a {
+  .nav li a {
+    font-size: 1rem;
+    padding: 0.4rem 0;
+  }
+
+  .logo-text {
     font-size: 1.1rem;
+  }
+
+  .logo-icon {
+    font-size: 1.4rem;
+  }
+}
+
+/* ---------- Extra Small Screens (≤480px) ---------- */
+@media (max-width: 480px) {
+   
+  .logo-text {
+    font-size: 0.95rem;
+  }
+
+  .logo-icon {
+    font-size: 1.2rem;
+  }
+
+  .menu-icon {
+    font-size: 1.2rem;
+  }
+
+  .nav li a {
+    font-size: 0.9rem;
   }
 }
